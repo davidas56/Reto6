@@ -30,7 +30,8 @@ const Item = mongoose.model('Item', ItemSchema);
 // Rutas de la API
 app.get('/api/items', async (req, res) => {
   try {
-    const items = await Item.find();
+    const items = await Item.find();  
+    // filtro de busqueda agregado
     res.json(items);
   } catch (error) {
     res.status(500).json({ error: 'Error al obtener los elementos' });
